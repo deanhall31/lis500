@@ -68,7 +68,7 @@
 
         <section aria-labelledby="data-heading">
             <h2 id="data-heading">The data</h2>
-            <p>Each team member recorded 100 original webcam images of their own hands. No images were downloaded or generated.</p>
+            <p>I recorded 100 original webcam images of their own hands. No images were downloaded or generated.</p>
             <table class="tm-table">
                 <thead><tr><th scope="col">Class</th><th scope="col">What it shows</th></tr></thead>
                 <tbody>
@@ -85,7 +85,7 @@
 
         <section aria-labelledby="findings-heading">
             <h2 id="findings-heading">What we found</h2>
-            <p><span class="todo">[Add your screenshots (the Under the hood graphs, one correct guess, one wrong guess) and 2&ndash;3 sentences on where the model failed and under what conditions.]</span></p>
+            <p><span class="todo">The teachable model I created is able to identify nothing, thumbs_up, and peace sign very well. However, it did struggle in two specific situations. The first is when I made a fist that wasn't turned sideways, and instead was straight up and down. Often, the model mistook this for a thumbs_up sign. Second, when I held my thumb up far away form the camera, the probability for peace sometimes rose, there were even instances where it became the most probable for the model. I believe that both of these errors come from the training data, as most of my thumbs_up photos were close to the camera, which affected how the model learned. However, I am not sure about the other issue, confusing fist and thumbs_up, as I uploaded many photos of a fist straight up and down into the model. The training graphs that I viewed on the teachable model page looked very strong, and didn't show these failures, as it was being measured on images similar to the ones that the model trained on. </span></p>
         </section>
 
         <section aria-labelledby="statement-heading">
