@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Project 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylepage.css">
+
+    <!-- This is an about us page, which is based off of the videos that we created for our project 1.
+         I tried to seperate the data into two parts. One that is a short piece about things that both of us
+         have in common, and why we are taking the class. And a second part that is for each person indivually.
+         I used the same head, navigation, and footer as every other page, so that it feels consistent to the other pages.
+         In this page, I used h1 as the page title, and h2 +3 for the additional sections. DH
+    -->
+
+    <!-- I updated this about us page to make our profiles look more organized for the final submission.
+         I kept the two parts that Dean set up, including the shared paragraph about our class and each of our original bios.
+         Instead of plain text blocks, I wrapped our bios into a two-column responsive card grid with avatar initials.
+         I kept the same head, navigation, and footer so it stays consistent with the rest of the site.
+         In this page, I kept h1 as the title, and used h2 and h3 along with article tags for the team cards. KW
+    -->
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About Us</a>
+        <a href="resources.html">Implicit Bias Guide</a>
+        <a href="tech-heroes.html">Tech Heroes</a>
+    </nav>
+
+<!-- The skip link wasn’t working before because there was no `main` ID. I added it, and now keyboard users can skip straight to the main content. KW -->
+    <main id="main">
+        <h1>About Us</h1>
+
+        <!-- Fixed the types, style, and heading of this intro paragraph DH -->
+        <h2>Why we are in this class.</h2>
+        <p>We are two seniors at UW&ndash;Madison who are both studying technology.
+           We were both interested in Code &amp; Power (LIS 500) because it is an important class that discusses race and gender in technology,
+           unlike any of our other tech classes.</p>
+
+        <h2>The Team</h2>
+
+        <div class="team-grid">
+            <!--This is Keyia Wang's Profile Card (KW) -->
+                <article class="profile-card" aria-labelledby="member-kw">
+                    <div class="profile-header">
+                        <div class="avatar avatar-kw" aria-hidden="true">KW</div>
+                        <div>
+                            <h3 id="member-kw">Keyia Wang</h3>
+                            <p class="member-role">Data Science Major &bull; Senior</p>
+                        </div>
+                    </div>
+                    <dl class="profile-meta">
+                        <dt>Background</dt>
+                        <dd>UW&ndash;Madison Senior (Transfer from UPitt Information Science Major)</dd>
+                        <dt>Interests</dt>
+                        <dd>Big Record Collector and Old Film Enjoyer</dd>
+                    </dl>
+                </article>
+
+                <!--This is Dean Hall's Profile Card (KW)-->
+                <article class="profile-card" aria-labelledby="member-dh">
+                    <div class="profile-header">
+                        <div class="avatar avatar-dh" aria-hidden="true">DH</div>
+                        <div>
+                            <h3 id="member-dh">Dean Hall</h3>
+                            <p class="member-role">Data Science Major &bull; Senior</p>
+                        </div>
+                    </div>
+                    <dl class="profile-meta">
+                        <dt>Background</dt>
+                        <dd>UW&ndash;Madison Senior (from New York City)</dd>
+                        <dt>Interests</dt>
+                        <dd>Coding and Sports Fan</dd>
+                    </dl>
+                </article>
+            </div>
+
+            <!-- Added a keep exploring option, to make it easier for visitors to go to a different page. DH -->
+            <h2>Keep exploring</h2>
+            <p>Read our <a href="resources.html">Implicit Bias Guide</a> or meet <a href="tech-heroes.html">our tech hero</a>.</p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Keyia Wang and Dean Hall</p>
+    </footer>
+</body>
+</html>
