@@ -62,8 +62,7 @@
 
         <section aria-labelledby="video-heading">
             <h2 id="video-heading">Demo video</h2>
-            <!-- Put your embed link in src (YouTube: https://www.youtube.com/embed/VIDEO_ID). The frame appears once src is filled in. -->
-            <iframe id="demoVideo" class="tm-video" title="Demo video of the gesture classifier at work" src="" allowfullscreen hidden></iframe>
+            <iframe id="demoVideo" class="tm-video" title="Demo video of gesture classifier" src="https://youtu.be/QPBWau26fo4" allowfullscreen hidden></iframe>
             <p id="videoTodo"><span class="todo">[Add your video embed link to the iframe above.]</span></p>
         </section>
 
@@ -120,7 +119,6 @@
         const labelsEl = document.getElementById("labels");
         let model, webcam, rows = [];
 
-        // Show the video frame once an embed link has been added.
         const video = document.getElementById("demoVideo");
         if (video.getAttribute("src")) {
             video.hidden = false;
@@ -151,7 +149,7 @@
                 });
 
                 setStatus("Starting camera...");
-                webcam = new tmImage.Webcam(320, 320, true); // true = mirror the image
+                webcam = new tmImage.Webcam(320, 320, true); 
                 await webcam.setup();
                 await webcam.play();
                 const holder = document.getElementById("webcam");
