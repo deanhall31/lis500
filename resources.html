@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implicit Bias Guide | Project 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylepage.css">
+
+    <!-- This page is our implicit bias page, written for first year college students, who are seeing these terms for the very first time.
+         Each of the three topics on this page get an H2 heading, and a short explanation, as well as a link towards a video that helps understand
+         the idea being defined. All external links open a new tab, and I wrote inside the link that this would happen, so it is not a suprise to the viewer.
+         The styling for this page comes from stylepage.css only.  DH
+    -->
+
+    <!-- I updated this page so our guide gives unique value instead of just repeating definitions from class.
+         I kept all of Dean's original explanations and links, but organized each of the three topics into clean cards.
+         For each topic, I added a short "Why it matters in tech" section to connect implicit bias and intersectionality
+         directly to real algorithms, resume screening, and our Tech Hero Kimberly Bryant.
+         I also kept the same navigation, head, and footer to stay consistent with the rest of the site. KW
+    -->
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="resources.html" aria-current="page">Implicit Bias Guide</a>
+        <a href="tech-heroes.html">Tech Heroes</a>
+    </nav>
+
+<!--The link did not work at first because the page was missing an element with the ID `main`. After adding it, keyboard users can now move directly to the main section. KW -->
+    <main id="main">
+        <header class="resource-hero">
+            <h1>Implicit Bias: A Starter Guide</h1>
+            <p class="guide-intro">New to these terms? Start here. This guide connects core concepts from LIS 500 to everyday technology and real-world examples.</p>
+        </header>
+
+        <!-- I wrapped each topic into its own card with discussion prompts to make the guide interactive and useful. KW -->
+        <div class="resource-container">
+
+            <!-- TOPIC 1: Implicit Bias -->
+            <article class="resource-card">
+                <h2>What is implicit bias?</h2>
+                <p>Implicit Bias is an unconscious and unintentional belief or thought about a specific group of people that
+                   changes and influences the way that a person behaves towards that specific group. An example of this is something like
+                   resume screening, where two identical resumes receive much different treatment, because one has a traditional white name, and
+                   another has a traditional muslim name.</p>
+
+                <div class="resource-takeaway">
+                    <p class="takeaway-title">Why it matters in tech:</p>
+                    <p>When automated hiring tools or screening algorithms are trained on historical human decisions, they end up learning and repeating these exact unconscious biases at scale.</p>
+                </div>
+
+                <div class="resource-links">
+                    <p class="links-title">Watch &amp; Learn:</p>
+                    <ul>
+                        <li><a href="https://www.ted.com/talks/verna_myers_how_to_overcome_our_biases_walk_boldly_toward_them" target="_blank" rel="noopener noreferrer">Verna Myers: How to overcome our biases (TED Talk, opens in a new tab)</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- TOPIC 2: IAT Test -->
+            <article class="resource-card">
+                <h2>The Implicit Association Test (IAT)</h2>
+                <p>I thought that the IAT test from Harvard was very interesting, and unlike anything else I have ever done before. Before taking the
+                    test, I was curious to see how something could test implicit bias, and I think that the IAT test does as good a job as possible to
+                    test for something that is unconscious. However, I think it is impossible to truly understand implicit bias inside of a person, as it is something
+                    that is unconscious, and not on purpose.</p>
+
+                <div class="resource-takeaway">
+                    <p class="takeaway-title">Try it yourself:</p>
+                    <p>Testing your own reaction times helps make an invisible concept visible, showing how societal stereotypes influence subconscious processing.</p>
+                </div>
+
+                <div class="resource-links">
+                    <p class="links-title">Take the Assessment:</p>
+                    <ul>
+                        <li><a href="https://implicit.harvard.edu/implicit/takeatest.html" target="_blank" rel="noopener noreferrer">Take a Project Implicit test (Harvard, opens in a new tab)</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- TOPIC 3: Intersectionality -->
+            <article class="resource-card">
+                <h2>Intersectionality</h2>
+                <p>Intersectionality is the idea that people's race, gender, and other such factors that define their identity, impact and shape their experiences in the world. Further, it is the idea that a single person's experience cannot be understood by looking at only one part of their identity, you must look at all parts.</p>
+
+                <!-- Connecting intersectionality directly to technology so it provides unique value beyond general definitions KW -->
+                <div class="resource-takeaway">
+                    <p class="takeaway-title">Why it matters in tech:</p>
+                    <p>In tech spaces, addressing gender alone often overlooks the unique barriers faced by women of color. Looking at technology through an intersectional lens explains why initiatives like Black Girls Code (featured on our Tech Heroes page) are critical for addressing compounding inequalities.</p>
+                </div>
+
+                <div class="resource-links">
+                    <p class="links-title">Watch &amp; Learn:</p>
+                    <ul>
+                        <li><a href="https://www.ted.com/talks/kimberle_crenshaw_the_urgency_of_intersectionality" target="_blank" rel="noopener noreferrer">Kimberlé Crenshaw: The urgency of intersectionality (TED Talk, opens in a new tab)</a></li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Keyia Wang and Dean Hall</p>
+    </footer>
+</body>
+</html>
