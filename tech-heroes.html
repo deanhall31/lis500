@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Heroes | Project 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylepage.css">
+
+    <!--
+        This page is about a tech hero, who is a person of color and someone who works to challenge the inequality that currently exists inside of technology in the US.
+        The bio was limited at 300 words, and required a photo, with an img tag and alt text so that even people who cant see the image can still recieve information on it.
+        As of the last pages, the only styling comes from our stylepage.css, and the navigation of this page matches all of the others in this repo.  DH
+    -->
+
+    <!-- I updated the formatting of this page so Kimberly Bryant's story and photo sit together inside a clean profile layout.
+         And I kept all of Dean's original bio text and links exactly as they were without adding new facts.
+         I used a responsive card with styled figures and a dedicated resources box so the external links are easy to click.
+         I also kept the same navigation, head, and footer to stay consistent across the site. KW
+    -->
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="resources.html">Implicit Bias Guide</a>
+        <a href="tech-heroes.html" aria-current="page">Tech Heroes</a>
+    </nav>
+
+<!-- The link wasn't responding before because there was no section labeled with id="main". I added the ID, so keyboard users can now jump directly to the main content. KW -->
+    <main id="main">
+        <header class="hero-page-header">
+            <h1>Tech Heroes</h1>
+        </header>
+
+        <!-- I wrapped the hero content into a structured card layout for a cleaner presentation. KW -->
+        <article class="hero-feature-card">
+            <h2><strong>Kimberly Bryant</strong></h2>
+
+            <div class="hero-content-wrapper">
+                <figure class="hero-figure">
+                    <img src="bryant.jpg" alt="Portrait of Kimberly Bryant, founder of Black Girls Code" width="300" class="hero-image">
+                    <figcaption>Kimberly Bryant, founder of Black Girls Code.</figcaption>
+                </figure>
+
+                <div class="hero-bio-text">
+                    <!-- Re-formatted the paragraph about Kimerbly Bryant to be in seperate short paragraphs, instead of one large paragraph. DH -->
+                    <p>Kimberly Bryant is an African-American women from Memphis, Tennessee where she was raised by a single mother. She then attended Vanderbilt University, where she chose to study electrical engineering. It was here she realized how few other students looked like her.</p>
+
+                    <p>In 2011, after working as an engineer for over 20 years, Bryant founded Black Girls Code. This organization started out as a small workshop for girls aged between 6 and 13, however, it quickly grew into a huge program that was introducing girls, aged 7 to 17, to topics like robotics, game design, app development, and programming.</p>
+
+                    <p>As the organization has expanded from San Francisco, to chapters around the nation, Bryant has also turned down money from organization that did not align with her values. For example, she turned down over $100,000 from Uber, after a huge sexual assault scandal happened at the company.</p>
+
+                    <p>Bryant's work is something that struck very close to home for me, as when I was younger I was lucky enough to be introduced to code by my parents. However, I know there are many people that will not be introduced to these topics by their parents or people around them. That's why a program like Black Girls Code, that brings these topics to people that otherwise would never learn about them, is something that is very special to me.</p>
+                </div>
+            </div>
+
+            <!-- I grouped the external reading links into an easy-to-navigate section at the bottom. KW -->
+            <div class="hero-links-box">
+                <h3>Learn more</h3>
+                <ul class="hero-links-list">
+                    <li><a href="https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist)" target="_blank" rel="noopener noreferrer">Kimberly Bryant on Wikipedia (opens in a new tab)</a></li>
+                    <li><a href="https://ncwit.org/profile/kimberly-bryant/" target="_blank" rel="noopener noreferrer">NCWIT profile of Kimberly Bryant (opens in a new tab)</a></li>
+                    <li><a href="https://blog.siggraph.org/2022/02/how-she-inspires-black-girls-code-founder-kimberly-bryant.html/" target="_blank" rel="noopener noreferrer">ACM SIGGRAPH interview: How She Inspires (opens in a new tab)</a></li>
+                    <li><a href="https://roadtripnation.com/leader/kimberly-bryant" target="_blank" rel="noopener noreferrer">Roadtrip Nation: Kimberly Bryant (opens in a new tab)</a></li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Keyia Wang and Dean Hall</p>
+    </footer>
+</body>
+</html>
