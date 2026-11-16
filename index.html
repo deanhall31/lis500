@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title changed from Project 2 to Home | Project 2, so any links will now show what page this is. DH -->
+    <title>Home | Project 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylepage.css">
+
+    <!-- We rewrote the home page of the project, so that it know reads as a real splash page, instead of a basic list of names. H1 and welcome paragraph
+         describe what the page is and who it is for, with new previews for other pages in the site. DH KW -->
+         
+
+    <!-- I changed the layout of this page so the team members show up as cards instead of a basic list. KW -->
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="resources.html">Implicit Bias Guide</a>
+        <a href="tech-heroes.html">Tech Heroes</a>
+    </nav>
+
+<!--The jump link didn’t work before because there was no element with the ID main. I added the ID, so now keyboard users can jump directly to the main content KW -->
+    <main id="main">
+        <header class="home-hero">
+            <!-- Added a title that describes that describes Project 2 better than the name Project 2, and added detail to the welcome paragraph, and other changes DH -->
+            <h1>Bias, Identity, and Technology</h1>
+            <p class="welcome-text">Welcome to our Project 2 website. We are two UW Madison seniors in a Code and Power class. This site is for anyone who wants to learn about the ideas of implicit bias and intersectionality for the first time.</p>
+            <a class="button" href="resources.html">Start with the guide</a>
+        </header>
+
+        <!-- Added previews for each section/page on the site DH -->
+        <section aria-labelledby="explore-heading">
+            <h2 id="explore-heading">What you will find here</h2>
+
+            <div class="explore-grid">
+                <a href="about.html" class="card-link">
+                    <article class="profile-card">
+                        <h3>About Us</h3>
+                        <p class="card-desc">Who we are and why we chose this class.</p>
+                        <p class="card-cta">Meet the team</p>
+                    </article>
+                </a>
+
+                <a href="resources.html" class="card-link">
+                    <article class="profile-card">
+                        <h3>Implicit Bias Guide</h3>
+                        <p class="card-desc">Easy to understand explanations, our thoughts on the IAT, and videos to further your understanding.</p>
+                        <p class="card-cta">Read the guide</p>
+                    </article>
+                </a>
+                
+            </div>
+        </section>
+
+        <!-- Added a short part of tech hero on the home page DH -->
+        <section aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Our Featured Tech Hero</h2>
+            <div class="featured-hero">
+                <img src="bryant.jpg" alt="Portrait of Kimberly Bryant, founder of Black Girls Code" width="140">
+                <p>Kimberly Bryant, founder of Black Girls Code, who's goal was to introduce girls of color to programming and technology. <a href="tech-heroes.html">Read her story</a>.</p>
+            </div>
+        </section>
+        
+        <section class="home-team-section" aria-labelledby="home-team-heading">
+            <h2 id="home-team-heading">Team Members</h2>
+
+            <!-- I wrapped the cards in links so users can click on our names to jump straight to the about page. KW -->
+            <div class="team-grid">
+                <a href="about.html" class="card-link">
+                    <article class="profile-card home-member-card">
+                        <div class="profile-header">
+                            <div class="avatar avatar-kw" aria-hidden="true">KW</div>
+                            <h3>Keyia Wang</h3>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="about.html" class="card-link">
+                    <article class="profile-card home-member-card">
+                        <div class="profile-header">
+                            <div class="avatar avatar-dh" aria-hidden="true">DH</div>
+                            <h3>Dean Hall</h3>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Keyia Wang and Dean Hall</p>
+    </footer>
+</body>
+</html>
