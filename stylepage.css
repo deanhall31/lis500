@@ -1,0 +1,410 @@
+body {
+    font-family: "Inter", Arial, sans-serif;
+    max-width: 45rem;
+    margin: 0 auto;
+    padding: 1rem;
+    line-height: 1.6;
+    color: #222222;
+    background: #fdfaf3;
+}
+
+h1, h2, h3 {
+    color: #1b4f72;
+    font-family: "Fraunces", Georgia, serif;
+}
+
+a {
+    color: #1b4f72;
+}
+
+a:focus {
+    outline: 3px solid #e0a82e;
+}
+
+nav {
+    border-bottom: 2px solid #1b4f72;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* The thin light gray line at the bottom of the page serves as a separator between the footer and the rest of the content. There is also a bit of extra space above the footer line. The text in the footer is displayed in a smaller font size than the rest of the content, since the copyright information is less important than the content above it. The page now looks more organized. KW */
+footer {
+    border-top: 1px solid #cccccc;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+}
+/* In hovering over a link, the background of the text changes to a light yellow color, and the text itself turns black. This highlights the link further so it’s more noticeable and clearly indicates that it can be clicked. It also serves a purpose by enabling users to know where on the page they are clicking. KW */
+a:hover { background: #fdf0c8; color: #000000; }
+   nav a:hover { border-bottom: 3px solid #e0a82e; }
+   nav a[aria-current="page"] { border-bottom: 3px solid #e0a82e; }
+   img { border-radius: 0.75rem; transition: transform 0.2s ease; }
+   img:hover { transform: scale(1.03); }
+   iframe { max-width: 100%; }
+
+  /* The skip link is hidden off-screen and appears when someone presses Tab, so keyboard users can skip the navigation and go directly to the main content. KW */
+.skip-link { position: absolute; left: 0.5rem; top: -3rem; background: #1b4f72; color: #ffffff; padding: 0.5rem 1rem; }
+   .skip-link:focus { top: 0.5rem; }
+
+ /* Styled the team section into responsive cards instead of plain text blocks.
+   Added a simple 2-column grid and subtle shadow/hover effects.
+   Kept all of our original bio text intact. KW */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.profile-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+/* Initials badges for our profile headers DH */
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.avatar-kw {
+    background-color: #1b4f72;
+}
+
+.avatar-dh {
+    background-color: #2e7d32;
+}
+
+.bio-text {
+    line-height: 1.6;
+    color: #374151;
+    margin: 0;
+}
+
+/* I added these styles for the home page header and cards so they fit the new grid. KW */
+.home-hero {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.welcome-text {
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.home-member-card {
+    padding: 1.25rem;
+}
+
+.home-member-card .profile-header {
+    margin-bottom: 0;
+}
+
+/* I made the card links block elements and removed default underline so the cards look clean and clickable. KW */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:focus-visible {
+    outline: 2px solid #1b4f72;
+    border-radius: 8px;
+}
+
+
+/* I styled the resource guide into distinct topic cards with highlight boxes for takeaways. KW */
+.resource-hero {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.guide-intro {
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.resource-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resource-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.resource-card h2 {
+    margin-top: 0;
+    color: #1b4f72;
+}
+
+.resource-takeaway {
+    background: #f8fafc;
+    border-left: 4px solid #1b4f72;
+    padding: 0.85rem 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.takeaway-title {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.resource-takeaway p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.resource-links {
+    margin-top: 1rem;
+}
+
+.links-title {
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.25rem;
+}
+
+.resource-links ul {
+    margin: 0.25rem 0 0 1.2rem;
+    padding: 0;
+}
+
+.resource-links li {
+    margin-bottom: 0.25rem;
+}
+
+
+/* I styled the Tech Heroes page so the photo and bio sit side-by-side on desktop screens.
+   Also added rounded corners and subtle shadow to the hero card and image. KW */
+
+.hero-page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-feature-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hero-feature-card h2 {
+    margin-top: 0;
+    color: #1b4f72;
+    font-size: 1.6rem;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 1.25rem;
+}
+
+.hero-figure {
+    margin: 0;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.hero-image {
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-figure figcaption {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.hero-bio-text {
+    flex: 1 1 320px;
+}
+
+/* The hero bio is several paragraphs, so each one gets space below it. DH */
+.hero-bio-text p {
+    margin: 0 0 1rem;
+    line-height: 1.7;
+    color: #374151;
+    font-size: 1rem;
+}
+
+.hero-bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+.hero-links-box {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.hero-links-box h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.15rem;
+    color: #1f2937;
+}
+
+.hero-links-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+.hero-links-list li {
+    margin-bottom: 0.4rem;
+}
+
+/* FINAL STYLE EDIT
+   These new final style rule edits help support the entire page, and make
+   the page look and run better. DH */
+
+/* Re-does the main page link on the Home page. DH */
+.button {
+    display: inline-block;
+    background: #1b4f72;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #0f3550;
+    color: #ffffff;
+}
+
+/* Adds three previews on the home page. DH */
+.explore-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card-desc {
+    margin: 0.5rem 0 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.card-cta {
+    margin: 0.75rem 0 0;
+    font-weight: 600;
+    color: #1b4f72;
+}
+
+/* Changes the yellow highlighter */
+.card-link:hover {
+    background: transparent;
+    color: inherit;
+}
+
+/* Changes the tech hero photo, to allow the photo to be beside text. DH */
+.featured-hero {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.featured-hero img {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.featured-hero p {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Key terms put at top of resource guide DH */
+.key-terms dt {
+    font-weight: 700;
+    color: #1b4f72;
+}
+
+.key-terms dd {
+    margin: 0 0 0.75rem 0;
+}
+
+/* New styles for profiles on the About Us page. DH */
+.member-role {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.profile-meta dt {
+    font-weight: 700;
+    color: #1b4f72;
+    margin-top: 0.5rem;
+}
+
+.profile-meta dd {
+    margin: 0;
+}
