@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachable Machines | Project 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylepage.css">
+
+    <style>
+        .tm-demo { display: grid; gap: 1.25rem; grid-template-columns: 1fr; margin-top: 1rem; }
+        @media (min-width: 700px) { .tm-demo { grid-template-columns: 340px 1fr; align-items: start; } }
+        .tm-panel { border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 10px; padding: 1rem; }
+        #webcam canvas { width: 100%; max-width: 320px; border-radius: 8px; display: block; background: #000; }
+        #webcam .tm-placeholder { width: 100%; max-width: 320px; aspect-ratio: 1; border-radius: 8px;
+            display: grid; place-items: center; text-align: center; padding: 0.75rem;
+            border: 1px dashed rgba(0, 0, 0, 0.35); }
+        button.button { font: inherit; cursor: pointer; border: 0; margin-top: 0.75rem; }
+        button.button:disabled { opacity: 0.6; cursor: default; }
+        #status { font-size: 0.9rem; min-height: 1.4em; margin-top: 0.5rem; }
+        .tm-row { margin: 0.65rem 0; }
+        .tm-name { display: flex; justify-content: space-between; font-size: 0.95rem; }
+        .tm-bar { height: 10px; background: rgba(0, 0, 0, 0.12); border-radius: 5px; overflow: hidden; }
+        .tm-bar > span { display: block; height: 100%; width: 0; background: currentColor; }
+        .tm-video { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 10px; }
+        .tm-table { border-collapse: collapse; width: 100%; }
+        .tm-table th, .tm-table td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+        .todo { background: #fff6d6; color: #5b4300; padding: 1px 5px; border-radius: 4px; }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="resources.html">Implicit Bias Guide</a>
+        <a href="tech-heroes.html">Tech Heroes</a>
+        <a href="teachable-machines.html" aria-current="page">Teachable Machines</a>
+    </nav>
+
+    <main id="main">
+        <header class="home-hero">
+            <h1>Teaching a Machine to Read Hand Gestures</h1>
+            <p class="welcome-text">For Project 3 we trained an image classifier with Google's Teachable Machine, using photos of our own hands, and tested where it works and where it fails. Try it below.</p>
+        </header>
+
+        <section aria-labelledby="demo-heading">
+            <h2 id="demo-heading">Try the classifier</h2>
+            <div class="tm-demo">
+                <div class="tm-panel">
+                    <div id="webcam"><div class="tm-placeholder">The camera stays off until you press Start. Nothing is uploaded.</div></div>
+                    <button id="startBtn" class="button" type="button">Start camera</button>
+                    <div id="status" role="status" aria-live="polite"></div>
+                </div>
+                <div class="tm-panel">
+                    <strong>What the model thinks</strong>
+                    <div id="labels"><p>Predictions appear here once the camera starts.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="video-heading">
+            <h2 id="video-heading">Demo video</h2>
+            <!-- Put your embed link in src (YouTube: https://www.youtube.com/embed/VIDEO_ID). The frame appears once src is filled in. -->
+            <iframe id="demoVideo" class="tm-video" title="Demo video of the gesture classifier at work" src="" allowfullscreen hidden></iframe>
+            <p id="videoTodo"><span class="todo">[Add your video embed link to the iframe above.]</span></p>
+        </section>
+
+        <section aria-labelledby="data-heading">
+            <h2 id="data-heading">The data</h2>
+            <p>Each team member recorded 100 original webcam images of their own hands. No images were downloaded or generated.</p>
+            <table class="tm-table">
+                <thead><tr><th scope="col">Class</th><th scope="col">What it shows</th></tr></thead>
+                <tbody>
+                    <tr><td>thumbs_up</td><td>A thumbs-up gesture</td></tr>
+                    <tr><td>peace</td><td>A peace sign</td></tr>
+                    <tr><td>fist</td><td>A closed fist</td></tr>
+                    <tr><td>nothing</td><td>An empty background with no hand</td></tr>
+                </tbody>
+            </table>
+            <p>We changed lighting, background and distance on purpose. <span class="todo">[Add the conditions you used.]</span></p>
+            <p>Dataset: <a href="https://github.com/deanhall31/lis500/tree/main/dataset">github.com/deanhall31/lis500/tree/main/dataset</a><br>
+               Code: <a href="https://github.com/deanhall31/lis500">github.com/deanhall31/lis500</a></p>
+        </section>
+
+        <section aria-labelledby="findings-heading">
+            <h2 id="findings-heading">What we found</h2>
+            <p><span class="todo">[Add your screenshots (the Under the hood graphs, one correct guess, one wrong guess) and 2&ndash;3 sentences on where the model failed and under what conditions.]</span></p>
+        </section>
+
+        <section aria-labelledby="statement-heading">
+            <h2 id="statement-heading">Project statement</h2>
+            <p><span class="todo">[1,000+ words: What lessons from <em>Unmasking AI</em> are resonant for you as you complete this assignment? Paste your statement here.]</span></p>
+        </section>
+
+        <section aria-labelledby="refs-heading">
+            <h2 id="refs-heading">References</h2>
+            <ul>
+                <li>Buolamwini, J. (2023). <em>Unmasking AI: My Mission to Protect What Is Human in a World of Machines.</em> Random House.</li>
+                <li><a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> (Google Creative Lab).</li>
+                <li><a href="https://www.tensorflow.org/js">TensorFlow.js</a>.</li>
+                <li><a href="https://thecodingtrain.com/tracks/teachable-machine/teachable-machine/1-image-classification">The Coding Train: Teachable Machine 1, Image Classification</a>.</li>
+                <li><a href="https://github.com/deanhall31/lis500">Project repository on GitHub</a>.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Keyia Wang and Dean Hall</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        const MODEL_LINK = "https://teachablemachine.withgoogle.com/models/tyblgRo9F/";
+
+        const startBtn = document.getElementById("startBtn");
+        const statusEl = document.getElementById("status");
+        const labelsEl = document.getElementById("labels");
+        let model, webcam, rows = [];
+
+        // Show the video frame once an embed link has been added.
+        const video = document.getElementById("demoVideo");
+        if (video.getAttribute("src")) {
+            video.hidden = false;
+            document.getElementById("videoTodo").hidden = true;
+        }
+
+        function setStatus(msg) { statusEl.textContent = msg; }
+
+        async function init() {
+            if (MODEL_LINK.indexOf("PASTE_") === 0) {
+                setStatus("Add your model link in the script first (MODEL_LINK).");
+                return;
+            }
+            startBtn.disabled = true;
+            setStatus("Loading model...");
+            try {
+                const base = MODEL_LINK.endsWith("/") ? MODEL_LINK : MODEL_LINK + "/";
+                model = await tmImage.load(base + "model.json", base + "metadata.json");
+
+                labelsEl.innerHTML = "";
+                rows = model.getClassLabels().map(function (name) {
+                    const row = document.createElement("div");
+                    row.className = "tm-row";
+                    row.innerHTML = '<div class="tm-name"><span></span><span>0%</span></div><div class="tm-bar"><span></span></div>';
+                    row.querySelector(".tm-name span").textContent = name;
+                    labelsEl.appendChild(row);
+                    return row;
+                });
+
+                setStatus("Starting camera...");
+                webcam = new tmImage.Webcam(320, 320, true); // true = mirror the image
+                await webcam.setup();
+                await webcam.play();
+                const holder = document.getElementById("webcam");
+                holder.innerHTML = "";
+                holder.appendChild(webcam.canvas);
+                setStatus("Running. Show a gesture to the camera.");
+                window.requestAnimationFrame(loop);
+            } catch (err) {
+                console.error(err);
+                setStatus("Could not start: " + (err && err.message ? err.message : err) +
+                          " (The camera needs permission, and the page must be on https.)");
+                startBtn.disabled = false;
+            }
+        }
+
+        async function loop() {
+            webcam.update();
+            const prediction = await model.predict(webcam.canvas);
+            prediction.forEach(function (p, i) {
+                const pct = Math.round(p.probability * 100);
+                rows[i].querySelector(".tm-name span:last-child").textContent = pct + "%";
+                rows[i].querySelector(".tm-bar > span").style.width = pct + "%";
+            });
+            window.requestAnimationFrame(loop);
+        }
+
+        startBtn.addEventListener("click", init);
+    </script>
+</body>
+</html>
