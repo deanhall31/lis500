@@ -25,7 +25,6 @@
         .tm-video { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 10px; }
         .tm-table { border-collapse: collapse; width: 100%; }
         .tm-table th, .tm-table td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
-        .todo { background: #fff6d6; color: #5b4300; padding: 1px 5px; border-radius: 4px; }
     </style>
 </head>
 
@@ -62,8 +61,7 @@
 
         <section aria-labelledby="video-heading">
             <h2 id="video-heading">Demo video</h2>
-            <iframe id="demoVideo" class="tm-video" title="Demo video of gesture classifier" src="https://youtube.com/embed/QPBWau26fo4" allowfullscreen hidden></iframe>
-            <p id="videoTodo"><span class="todo">[Add your video embed link to the iframe above.]</span></p>
+            <iframe class="tm-video" title="Demo video of gesture classifier" src="https://youtube.com/embed/QPBWau26fo4" allowfullscreen></iframe>
         </section>
 
         <section aria-labelledby="data-heading">
@@ -78,7 +76,7 @@
                     <tr><td>nothing</td><td>An empty background</td></tr>
                 </tbody>
             </table>
-            <p>I changed lighting, background and distance on purpose. <span class="todo"></span></p>
+            <p>I changed lighting, background and distance on purpose.</p>
             <p>Dataset: <a href="https://github.com/deanhall31/lis500/tree/main/dataset">github.com/deanhall31/lis500/tree/main/dataset</a><br>
                Code: <a href="https://github.com/deanhall31/lis500">github.com/deanhall31/lis500</a></p>
         </section>
@@ -102,59 +100,41 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script>
+        // Your Teachable Machine model link (it must end with a slash).
         const MODEL_LINK = "https://teachablemachine.withgoogle.com/models/tyblgRo9F/";
 
         const startBtn = document.getElementById("startBtn");
         const statusEl = document.getElementById("status");
         const labelsEl = document.getElementById("labels");
-        let model, webcam, rows = [];
-
-        const video = document.getElementById("demoVideo");
-        if (video.getAttribute("src")) {
-            video.hidden = false;
-            document.getElementById("videoTodo").hidden = true;
-        }
-
-        function setStatus(msg) { statusEl.textContent = msg; }
+        let model, webcam, rows;
 
         async function init() {
-            if (MODEL_LINK.indexOf("PASTE_") === 0) {
-                setStatus("Add your model link in the script first (MODEL_LINK).");
-                return;
-            }
             startBtn.disabled = true;
-            setStatus("Loading model...");
+            statusEl.textContent = "Loading model...";
             try {
-                const base = MODEL_LINK.endsWith("/") ? MODEL_LINK : MODEL_LINK + "/";
-                model = await tmImage.load(base + "model.json", base + "metadata.json");
+                model = await tmImage.load(MODEL_LINK + "model.json", MODEL_LINK + "metadata.json");
 
-                labelsEl.innerHTML = "";
-                rows = model.getClassLabels().map(function (name) {
-                    const row = document.createElement("div");
-                    row.className = "tm-row";
-                    row.innerHTML = '<div class="tm-name"><span></span><span>0%</span></div><div class="tm-bar"><span></span></div>';
-                    row.querySelector(".tm-name span").textContent = name;
-                    labelsEl.appendChild(row);
-                    return row;
-                });
+                // One row (name, percent, bar) for each class in the model.
+                labelsEl.innerHTML = model.getClassLabels().map(function (name) {
+                    return '<div class="tm-row"><div class="tm-name"><span>' + name + '</span><span>0%</span></div>' +
+                           '<div class="tm-bar"><span></span></div></div>';
+                }).join("");
+                rows = labelsEl.querySelectorAll(".tm-row");
 
-                setStatus("Starting camera...");
-                webcam = new tmImage.Webcam(320, 320, true); 
+                statusEl.textContent = "Starting camera...";
+                webcam = new tmImage.Webcam(320, 320, true);
                 await webcam.setup();
                 await webcam.play();
-                const holder = document.getElementById("webcam");
-                holder.innerHTML = "";
-                holder.appendChild(webcam.canvas);
-                setStatus("Running. Show a gesture to the camera.");
+                document.getElementById("webcam").replaceChildren(webcam.canvas);
+                statusEl.textContent = "Running. Show a gesture to the camera.";
                 window.requestAnimationFrame(loop);
             } catch (err) {
-                console.error(err);
-                setStatus("Could not start: " + (err && err.message ? err.message : err) +
-                          " (The camera needs permission, and the page must be on https.)");
+                statusEl.textContent = "Could not start. The camera needs permission, and the page must be on https.";
                 startBtn.disabled = false;
             }
         }
 
+        // Runs on every camera frame: ask the model what it sees, then update the percentages and bars.
         async function loop() {
             webcam.update();
             const prediction = await model.predict(webcam.canvas);
